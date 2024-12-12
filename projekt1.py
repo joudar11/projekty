@@ -45,7 +45,7 @@ if user in users.keys():
         print("Pasword and username don't match!")
         exit()
 else:
-    print("User not recognised!")
+    print("User not registered! Exiting the program.")
     exit()
 
 print("We have", len(TEXTS), "to be analyzed.")
