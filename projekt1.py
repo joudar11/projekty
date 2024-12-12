@@ -73,7 +73,7 @@ uppers = 0
 lowers = 0
 numbers = 0
 total_sum = 0
-alnum = 0
+alphanumeric_count = 0
 
 #odstraneni znaku:
 
@@ -81,7 +81,6 @@ for i in range(len(words)):
     words[i] = words[i].strip(",.!?")
 
 #graf
-longest = 0
 lengths_set = set()
 
 for i in range(len(words)):
@@ -103,7 +102,7 @@ for i in range(len(words)):
             capitals = capitals + 1
     elif words[i].isalnum():
         count = count + 1
-        alnum = alnum + 1
+        alphanumeric_count = alphanumeric_count + 1
     lengths[len(words[i])] = lengths[len(words[i])] + 1
 
 #soucet slov a cisel
@@ -115,7 +114,7 @@ print("There are", capitals, "titlecase words.")
 print("There are", uppers, "uppercase words.")
 print("There are", lowers, "lowercase words.")
 print("There are", numbers, "numeric strings")
-print("There are", alnum, "alphanumeric string.")
+print("There are", alphanumeric_count, "alphanumeric string.")
 print("The sum of all numbers is", total_sum)
 
 #graph
