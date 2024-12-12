@@ -34,21 +34,23 @@ garpike and stingray are also present.'''
 ]
 
 
-"""
+
 #prihlaseni
 users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 user = str(input("Enter username: "))
 password = str(input("Enter password: "))
 if user in users.keys():
     if users[user] == password:
-        print("Welcome, ", user, ", proceed!")
+        print("Welcome to the app, ", user)
     else:
         print("Pasword and username don't match!")
         exit()
 else:
     print("User not recognised!")
     exit()
-"""
+
+print("We have", len(TEXTS), "to be analyzed.")
+
 # kontrola, ze na vstupu je cislo
 text_n = input("Please, select a text to analyze: ")
 input_check = bool(text_n.isdigit())
