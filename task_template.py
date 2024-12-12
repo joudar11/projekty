@@ -1,10 +1,6 @@
-"""
-projekt1.py: první projekt do Engeto Online Python Akademie
-
-author: Kryštof Klika
-email: krystofklika@pm.me
-"""
-
+'''
+author =
+'''
 TEXTS = ['''
 Situated about 10 miles west of Kemmerer,
 Fossil Butte is a ruggedly impressive
@@ -32,4 +28,3 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
-
