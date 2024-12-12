@@ -49,7 +49,8 @@ else:
 """
 print(len(TEXTS))
 text_n = input("Please, select a text to analyze: ")
-if not text_n.isdigit:
+input_check = bool(text_n.isdigit())
+if not input_check:
     print("The input is not a number!")
     exit()
 
