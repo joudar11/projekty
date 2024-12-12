@@ -50,14 +50,14 @@ else:
 
 print("We have", len(TEXTS), "to be analyzed.")
 
-# kontrola, ze na vstupu je cislo
+#kontrola, ze na vstupu je cislo:
 text_n = input("Please, select a text to analyze. Entere a number between 1 and 3: ")
 input_check = bool(text_n.isdigit())
 if not input_check:
     print("The input is not a number!")
     exit()
 
-#kontrola, ze adany text je v listu
+#kontrola, ze zadany text je v listu:
 text_n = int(text_n)
 if text_n > len(TEXTS):
     print("Text not found.")
@@ -65,11 +65,9 @@ if text_n > len(TEXTS):
 
 
 #zalozeni listu slov:
-
 words = TEXTS[text_n-1].split()
 
-#vysledky:
-
+#zalozeni promennych s vysledky:
 count = 0
 capitals = 0
 uppers = 0
