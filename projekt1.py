@@ -52,8 +52,7 @@ print("We have", len(TEXTS), "to be analyzed.")
 
 #kontrola, ze na vstupu je cislo:
 text_n = input("Please, select a text to analyze. Entere a number between 1 and 3: ")
-input_check = bool(text_n.isdigit())
-if not input_check:
+if not text_n.isdigit():
     print("The input is not a number!")
     exit()
 
