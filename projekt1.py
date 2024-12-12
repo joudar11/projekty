@@ -52,7 +52,8 @@ else:
 print("We have", len(TEXTS), "to be analyzed.")
 
 # kontrola, ze na vstupu je cislo
-text_n = input("Please, select a text to analyze. Entere a number between 1 and 3: ")
+# text_n = input("Please, select a text to analyze. Entere a number between 1 and 3: ")
+text_n = "1"
 input_check = bool(text_n.isdigit())
 if not input_check:
     print("The input is not a number!")
@@ -80,19 +81,24 @@ sum = 0
 
 #odstraneni znaku:
 
-for i in range(len(words)-1):
+for i in range(len(words)):
     words[i] = words[i].strip(",")
     words[i] = words[i].strip(".")
     words[i] = words[i].strip("!")
     words[i] = words[i].strip("?")
 
+#delky slov:
+lengths = set()
+for i in range(len(words)):
+    if len(words[i]) not in lengths:
+        lengths.add(len(words[i]))
 #analyza:
 
-for i in range(len(words)-1):
+for i in range(len(words)):
     if words[i].isdigit():
         numbers = numbers + 1
         sum = sum + int(words[i])
-    else:
+    elif words[i].isalpha():
         count = count + 1
         if words[i].islower():
             lowers = lowers + 1
@@ -100,6 +106,22 @@ for i in range(len(words)-1):
             uppers = uppers + 1
         elif words[i][0].isupper():
             capitals = capitals + 1
-            
+    elif words[i].isalnum():
+        count = count + 1
+
+#soucet slov a cisel
+count_all = count + numbers
+
+
+#vysledek analyzy
+print("There are", count_all, "words in the selected text.")
+print("There are", capitals, "titlecase words.")
+print("There are", uppers, "uppercase words.")
+print("There are", lowers, "lowercase words.")
+print("There are,", numbers, "numeric strings")
+print("The sum of all numbers is", sum)
+
+
+
 print(len(words))
-print("count:", count, "capitals:", capitals, "uppers:", uppers, "lowers:", lowers, "numbers:", numbers,"sum:", sum)
+print("count:", count, "capitals:", capitals, "uppers:", uppers, "lowers:", lowers, "numbers:", numbers,"sum:", sum, "count_all:", count_all)
