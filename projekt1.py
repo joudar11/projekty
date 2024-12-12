@@ -72,7 +72,7 @@ capitals = 0
 uppers = 0
 lowers = 0
 numbers = 0
-sum = 0
+total_sum = 0
 alnum = 0
 
 #odstraneni znaku:
@@ -92,7 +92,7 @@ lengths = dict.fromkeys(list(lengths_set), 0)
 for i in range(len(words)):
     if words[i].isdigit():
         numbers = numbers + 1
-        sum = sum + int(words[i])
+        total_sum = total_sum + int(words[i])
     elif words[i].isalpha():
         count = count + 1
         if words[i].islower():
@@ -116,7 +116,7 @@ print("There are", uppers, "uppercase words.")
 print("There are", lowers, "lowercase words.")
 print("There are", numbers, "numeric strings")
 print("There are", alnum, "alphanumeric string.")
-print("The sum of all numbers is", sum)
+print("The sum of all numbers is", total_sum)
 
 #graph
 
