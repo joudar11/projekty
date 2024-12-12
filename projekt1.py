@@ -78,20 +78,28 @@ lowers = 0
 numbers = 0
 sum = 0
 
+#odstraneni znaku:
+
+for i in range(len(words)-1):
+    words[i] = words[i].strip(",")
+    words[i] = words[i].strip(".")
+    words[i] = words[i].strip("!")
+    words[i] = words[i].strip("?")
+
 #analyza:
 
 for i in range(len(words)-1):
     if words[i].isdigit():
         numbers = numbers + 1
         sum = sum + int(words[i])
-    elif words[i].islower():
-        lowers = lowers + 1
-    elif words[i].isupper():
-        uppers = uppers + 1
-    elif words[i][0].isupper():
-        capitals = capitals + 1
-
+    else:
+        count = count + 1
+        if words[i].islower():
+            lowers = lowers + 1
+        elif words[i].isupper():
+            uppers = uppers + 1
+        elif words[i][0].isupper():
+            capitals = capitals + 1
+            
 print(len(words))
-print(words)
-
 print("count:", count, "capitals:", capitals, "uppers:", uppers, "lowers:", lowers, "numbers:", numbers,"sum:", sum)
