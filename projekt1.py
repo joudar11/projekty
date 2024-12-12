@@ -34,7 +34,7 @@ garpike and stingray are also present.'''
 ]
 
 
-
+"""
 #prihlaseni
 users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 user = str(input("Enter username: "))
@@ -48,7 +48,7 @@ if user in users.keys():
 else:
     print("User not recognised!")
     exit()
-
+"""
 print("We have", len(TEXTS), "to be analyzed.")
 
 # kontrola, ze na vstupu je cislo
@@ -63,3 +63,21 @@ text_n = int(text_n)
 if text_n > len(TEXTS):
     print("Text not found.")
     exit()
+
+
+#zalozeni listu slov a inicializace stringu
+
+anal = TEXTS[text_n-1]
+words = anal.split(sep=" ")
+
+#vysledky:
+
+count = 0
+capitals = 0
+uppers = 0
+lowers = 0
+numbers = 0
+sum = 0
+
+
+print("count:", count, "capitals:", capitals, "uppers:", uppers, "lowers:", lowers, "numbers:", numbers,"sum:", sum)
