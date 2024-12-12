@@ -46,3 +46,8 @@ else:
     print("User not recognised!")
     exit()
 
+text_n = int(input("Please, select a text to analyze: "))
+text_n = text_n - 1
+if text_n > len(TEXTS):
+    print("Text not found.")
+    exit())
