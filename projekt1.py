@@ -78,6 +78,7 @@ uppers = 0
 lowers = 0
 numbers = 0
 sum = 0
+alnum = 0
 
 #odstraneni znaku:
 
@@ -108,6 +109,7 @@ for i in range(len(words)):
             capitals = capitals + 1
     elif words[i].isalnum():
         count = count + 1
+        alnum = alnum + 1
 
 #soucet slov a cisel
 count_all = count + numbers
@@ -119,6 +121,7 @@ print("There are", capitals, "titlecase words.")
 print("There are", uppers, "uppercase words.")
 print("There are", lowers, "lowercase words.")
 print("There are,", numbers, "numeric strings")
+print("There are", alnum, "alphanumeric string.")
 print("The sum of all numbers is", sum)
 
 
