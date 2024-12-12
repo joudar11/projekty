@@ -52,7 +52,7 @@ else:
 print("We have", len(TEXTS), "to be analyzed.")
 
 # kontrola, ze na vstupu je cislo
-text_n = input("Please, select a text to analyze: ")
+text_n = input("Please, select a text to analyze. Entere a number between 1 and 3: ")
 input_check = bool(text_n.isdigit())
 if not input_check:
     print("The input is not a number!")
@@ -65,10 +65,9 @@ if text_n > len(TEXTS):
     exit()
 
 
-#zalozeni listu slov a inicializace stringu
+#zalozeni listu slov:
 
-anal = TEXTS[text_n-1]
-words = anal.split(sep=" ")
+words = TEXTS[text_n-1].split()
 
 #vysledky:
 
@@ -79,5 +78,20 @@ lowers = 0
 numbers = 0
 sum = 0
 
+#analyza:
+
+for i in range(len(words)-1):
+    if words[i].isdigit():
+        numbers = numbers + 1
+        sum = sum + int(words[i])
+    elif words[i].islower():
+        lowers = lowers + 1
+    elif words[i].isupper():
+        uppers = uppers + 1
+    elif words[i][0].isupper():
+        capitals = capitals + 1
+
+print(len(words))
+print(words)
 
 print("count:", count, "capitals:", capitals, "uppers:", uppers, "lowers:", lowers, "numbers:", numbers,"sum:", sum)
