@@ -79,12 +79,7 @@ alnum = 0
 #odstraneni znaku:
 
 for i in range(len(words)):
-    words[i] = words[i].strip(",")
-    words[i] = words[i].strip(".")
-    words[i] = words[i].strip("!")
-    words[i] = words[i].strip("?")
-
-
+    words[i] = words[i].strip(",.!?")
 
 #graf
 longest = 0
@@ -120,7 +115,7 @@ print("There are", count_all, "words in the selected text.")
 print("There are", capitals, "titlecase words.")
 print("There are", uppers, "uppercase words.")
 print("There are", lowers, "lowercase words.")
-print("There are,", numbers, "numeric strings")
+print("There are", numbers, "numeric strings")
 print("There are", alnum, "alphanumeric string.")
 print("The sum of all numbers is", sum)
 
