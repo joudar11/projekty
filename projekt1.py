@@ -34,7 +34,6 @@ garpike and stingray are also present.'''
 ]
 
 
-"""
 #prihlaseni
 users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 user = str(input("Enter username: "))
@@ -48,12 +47,11 @@ if user in users.keys():
 else:
     print("User not recognised!")
     exit()
-"""
+
 print("We have", len(TEXTS), "to be analyzed.")
 
 # kontrola, ze na vstupu je cislo
-# text_n = input("Please, select a text to analyze. Entere a number between 1 and 3: ")
-text_n = "1"
+text_n = input("Please, select a text to analyze. Entere a number between 1 and 3: ")
 input_check = bool(text_n.isdigit())
 if not input_check:
     print("The input is not a number!")
@@ -88,11 +86,15 @@ for i in range(len(words)):
     words[i] = words[i].strip("!")
     words[i] = words[i].strip("?")
 
-#delky slov:
-lengths = set()
+
+
+#graf
+longest = 0
+lengths_set = set()
+
 for i in range(len(words)):
-    if len(words[i]) not in lengths:
-        lengths.add(len(words[i]))
+    lengths_set.add(len(words[i]))
+lengths = dict.fromkeys(list(lengths_set), 0)
 #analyza:
 
 for i in range(len(words)):
@@ -110,10 +112,10 @@ for i in range(len(words)):
     elif words[i].isalnum():
         count = count + 1
         alnum = alnum + 1
+    lengths[len(words[i])] = lengths[len(words[i])] + 1
 
 #soucet slov a cisel
 count_all = count + numbers
-
 
 #vysledek analyzy
 print("There are", count_all, "words in the selected text.")
@@ -124,7 +126,10 @@ print("There are,", numbers, "numeric strings")
 print("There are", alnum, "alphanumeric string.")
 print("The sum of all numbers is", sum)
 
+#graph
 
 
-print(len(words))
-print("count:", count, "capitals:", capitals, "uppers:", uppers, "lowers:", lowers, "numbers:", numbers,"sum:", sum, "count_all:", count_all)
+word_lens = list(lengths.items())
+print("LEN - OCCURENCES - NR")
+for i in range(len(word_lens)):
+    print(word_lens[i][0], "-", "*"*word_lens[i][1], "-", word_lens[i][1] )
