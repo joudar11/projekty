@@ -33,6 +33,7 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
+"""
 users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 user = str(input("Enter username: "))
 password = str(input("Enter password: "))
@@ -45,9 +46,15 @@ if user in users.keys():
 else:
     print("User not recognised!")
     exit()
+"""
+print(len(TEXTS))
+text_n = input("Please, select a text to analyze: ")
+if not text_n.isdigit:
+    print("The input is not a number!")
+    exit()
 
-text_n = int(input("Please, select a text to analyze: "))
-text_n = text_n - 1
+text_n = int(text_n)
 if text_n > len(TEXTS):
     print("Text not found.")
-    exit())
+    exit()
+
