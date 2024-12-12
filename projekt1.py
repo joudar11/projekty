@@ -34,3 +34,15 @@ garpike and stingray are also present.'''
 ]
 
 users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
+user = str(input("Enter username: "))
+password = str(input("Enter password: "))
+if user in users.keys():
+    if users[user] == password:
+        print("Welcome, ", user, ", proceed!")
+    else:
+        print("Pasword and username don't match!")
+        exit()
+else:
+    print("User not recognised!")
+    exit()
+
