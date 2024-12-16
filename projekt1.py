@@ -121,6 +121,17 @@ print("The sum of all numbers is", total_sum)
 
 
 word_lens = list(lengths.items())
+longest_word = max(word_lens)[0]
+
+#nejvyssi pocet slov jedne delky
+top_word_length = 0
+for i in range(len(word_lens)):
+    if word_lens[i][1] > top_word_length:
+        top_word_length = word_lens[i][1]
+
 print("LEN - OCCURENCES - NR")
 for i in range(len(word_lens)):
-    print(word_lens[i][0], "-", "*"*word_lens[i][1], "-", word_lens[i][1] )
+    if i < 9:
+        print(f" {word_lens[i][0]} | {"*"*word_lens[i][1]}{" "*(top_word_length - word_lens[i][1])} | {word_lens[i][1]}")
+    else:
+        print(f"{word_lens[i][0]} | {"*"*word_lens[i][1]}{" "*(top_word_length - word_lens[i][1])} | {word_lens[i][1]}")
