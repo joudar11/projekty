@@ -33,7 +33,7 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-
+"""
 #prihlaseni
 users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 user = str(input("Enter username: "))
@@ -47,6 +47,7 @@ if user in users.keys():
 else:
     print("User not registered! Exiting the program.")
     exit()
+"""
 
 print("We have", len(TEXTS), "to be analyzed.")
 
@@ -96,14 +97,15 @@ for i in range(len(words)):
         count = count + 1
         if words[i].islower():
             lowers = lowers + 1
-        elif words[i].isupper():
-            uppers = uppers + 1
         elif words[i][0].isupper():
             capitals = capitals + 1
+            if words[i].isupper():
+                uppers = uppers + 1
     elif words[i].isalnum():
         count = count + 1
         alphanumeric_count = alphanumeric_count + 1
     lengths[len(words[i])] = lengths[len(words[i])] + 1
+    print(words[i])
 
 #soucet slov a cisel
 count_all = count + numbers
