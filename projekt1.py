@@ -105,7 +105,6 @@ for i in range(len(words)):
         count = count + 1
         alphanumeric_count = alphanumeric_count + 1
     lengths[len(words[i])] = lengths[len(words[i])] + 1
-    print(words[i])
 
 #soucet slov a cisel
 count_all = count + numbers
@@ -131,9 +130,9 @@ for i in range(len(word_lens)):
     if word_lens[i][1] > top_word_length:
         top_word_length = word_lens[i][1]
 
-print("LEN - OCCURENCES - NR")
+print("LEN| OCCURENCES |NR")
 for i in range(len(word_lens)):
-    if i < 9:
+    if word_lens[i][0] < 10:
         print(f" {word_lens[i][0]} | {"*"*word_lens[i][1]}{" "*(top_word_length - word_lens[i][1])} | {word_lens[i][1]}")
     else:
         print(f"{word_lens[i][0]} | {"*"*word_lens[i][1]}{" "*(top_word_length - word_lens[i][1])} | {word_lens[i][1]}")
