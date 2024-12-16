@@ -115,7 +115,7 @@ print("There are", capitals, "titlecase words.")
 print("There are", uppers, "uppercase words.")
 print("There are", lowers, "lowercase words.")
 print("There are", numbers, "numeric strings")
-print("There are", alphanumeric_count, "alphanumeric string.")
+print("There are", alphanumeric_count, "alphanumeric strings.")
 print("The sum of all numbers is", total_sum)
 
 #graph
