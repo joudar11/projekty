@@ -33,7 +33,7 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-"""
+
 #prihlaseni
 users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 user = str(input("Enter username: "))
@@ -47,7 +47,7 @@ if user in users.keys():
 else:
     print("User not registered! Exiting the program.")
     exit()
-"""
+
 
 print("We have", len(TEXTS), "to be analyzed.")
 
