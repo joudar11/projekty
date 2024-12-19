@@ -55,7 +55,7 @@ def announce_win(final_guesses):
     if final_guesses > 1:
         plural = "es"
     print(
-        f"Correct, you've guessed the right number in {final_guesses} guess{plural}!", "-"*47, "That's amazing!", sep="\n")
+        "Correct, you've guessed the right number", f"in {final_guesses} guess{plural}!", "-"*47, "That's amazing!", sep="\n")
 
 #vrati string bull nebo bulls na zaklade vyhodnoceni, zda jde o 1 ci vice pismen
 def bull(n):
