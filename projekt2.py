@@ -9,7 +9,7 @@ import random
 
 correct = False
 
-#str - vraci nahodne cislo k hadani hracem
+#str - vraci nahodne ctyrmistne cislo k hadani hracem, ktere je unikatni a nezacina nulou
 def to_guess():
     numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     increments = [1000, 100, 10, 1]
