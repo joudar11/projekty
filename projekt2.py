@@ -6,7 +6,7 @@ email: krystofklika@pm.me
 """
 
 import random
-#test
+
 correct = False
 
 #str - vraci nahodne ctyrmistne cislo k hadani hracem, ktere je unikatni a nezacina nulou
