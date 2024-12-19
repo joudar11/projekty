@@ -95,7 +95,7 @@ while not correct:
                     cows += 1
             print(f"{bull(bulls)}, {cow(cows)}")
             if guesses == 10:
-                print("\nBy the way, it is proved that any number\ncan be solved within seven turns.\nThe average minimal game length is\napproximately 5.21 turns.\n\nYou are on your 10th guess. ;)\nGo on.\n")
+                print(f"\nBy the way, it is proved that any number\ncan be solved within seven turns.\nThe average minimal game length is\napproximately 5.21 turns.\n\nYou are on your {guesses}th guess. ;)\nGo on.\n")
     print("-"*47)
 else:
     announce_win(guesses)
