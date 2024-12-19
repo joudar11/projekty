@@ -49,6 +49,7 @@ def verify(user_input):
     #pozitivni return, pokud je vse ok
     return True
 
+#oznami vyhru
 def announce_win(final_guesses):
     plural = ""
     if final_guesses > 1:
@@ -56,19 +57,21 @@ def announce_win(final_guesses):
     print(
         f"Correct, you've guessed the right number in {final_guesses} guess{plural}!", "-"*47, "That's amazing!", sep="\n")
 
+#vrati string bull nebo bulls na zaklade vyhodnoceni, zda jde o 1 ci vice pismen
 def bull(n):
     if n > 1 or n == 0:
         return "bulls"
     else:
         return "bull"
 
+#vrati string cow nebo cows na zaklade vyhodnoceni, zda jde o 1 ci vice pismen
 def cow(n):
     if n > 1 or n == 0:
         return "cows"
     else:
         return "cow"
-#hra
 
+#hra
 print(
     f"""Hi there!
 {"-"*47}
