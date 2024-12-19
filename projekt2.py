@@ -57,19 +57,19 @@ def announce_win(final_guesses):
     print(
         "Correct, you've guessed the right number", f"in {final_guesses} guess{plural}!", "-"*47, "That's amazing!", sep="\n")
 
-#vrati string bull nebo bulls na zaklade vyhodnoceni, zda jde o 1 ci vice cisel
+#vrati string bull nebo bulls
 def bull(n):
     if n == 1:
-        return "bull"
+        return "1 bull"
     else:
-        return "bulls"
+        return f"{n} bulls"
 
-#vrati string cow nebo cows na zaklade vyhodnoceni, zda jde o 1 ci vice cisel
+#vrati string cow nebo cows
 def cow(n):
     if n  == 1:
-        return "cow"
+        return "1 cow"
     else:
-        return "cows"
+        return f"{n} cows"
 
 #uvitani
 print(
@@ -93,7 +93,7 @@ while not correct:
                     bulls += 1
                 elif guess[i] in secret:
                     cows += 1
-            print(f"{bulls} {bull(bulls)}, {cows} {cow(cows)}")
+            print(f"{bull(bulls)}, {cow(cows)}")
     print("-"*47)
 else:
     announce_win(guesses)
