@@ -8,7 +8,6 @@ import math
 import random
 
 correct = False
-guesses = 0
 
 #int - vraci nahodne cislo k hadani hracem
 def to_guess():
@@ -43,18 +42,15 @@ def verify(user_input):
         return False
     
     #kontrola unikatnosti
-    set_verify = set()
-    for number in range(len(user_input)):
-        set_verify.add(user_input[number])
-    if len(set_verify) != 4:
+    if len(set(user_input)) != 4:
         print("Each digit can only be present once")
         return False
     
     #pozitivni return, pokud je vse ok
     return True
 
-def announce_win():
-    print(f"""Correct, you've guessed the right number in {guesses} guesses!
+def announce_win(final_guesses):
+    print(f"""Correct, you've guessed the right number in {final_guesses} guesses!
 -----------------------------------------------
 That's amazing!""")
 
@@ -81,6 +77,7 @@ Enter a number:
 -----------------------------------------------"""
 )
 
+guesses = 0
 secret = str(to_guess())
 print(secret)
 while not correct:
@@ -93,11 +90,10 @@ while not correct:
             correct = True
         else:
             for i in range(len(guess)):
-                if guess[i] in secret:
-                    if guess[i] == secret[i]:
-                        bulls += 1
-                    else:
-                        cows += 1
-            print(f"{bulls} {bull(bulls)}, {cows} {cow(cows)}.")
+                if guess[i] == secret[i]:
+                    bulls += 1
+                elif guess[i] in secret:
+                    cows += 1
+            print(f"{bulls} {bull(bulls)}, {cows} {cow(cows)}")
 else:
-    announce_win()
+    announce_win(guesses)
