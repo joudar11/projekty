@@ -9,7 +9,7 @@ import random
 
 correct = False
 
-#int - vraci nahodne cislo k hadani hracem
+#str - vraci nahodne cislo k hadani hracem
 def to_guess():
     numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     increments = [1000, 100, 10, 1]
@@ -22,7 +22,7 @@ def to_guess():
             rand = random.randint(0, len(numbers)-1)
         number = number + (increments[_] * numbers[rand])
         numbers.pop(rand)
-    return number
+    return str(number)
 
 #bool - overi hracem zadane cislo - (delsi nebo kratsi nez 4, unikatni, zacatek 0, neciselne znaky). True, pokud je vstup v poradku, False, pokud neni
 def verify(user_input):
@@ -50,9 +50,11 @@ def verify(user_input):
     return True
 
 def announce_win(final_guesses):
-    print(f"""Correct, you've guessed the right number in {final_guesses} guesses!
------------------------------------------------
-That's amazing!""")
+    plural = ""
+    if final_guesses > 1:
+        plural = "es"
+    print(
+        f"Correct, you've guessed the right number in {final_guesses} guess{plural}!", "-"*47, "That's amazing!", sep="\n")
 
 def bull(n):
     if n > 1 or n == 0:
@@ -68,25 +70,25 @@ def cow(n):
 #hra
 
 print(
-    """Hi there!
------------------------------------------------
+    f"""Hi there!
+{"-"*47}
 I've generated a random 4 digit number for you.
 Let's play a bulls and cows game.
------------------------------------------------
+{"-"*47}
 Enter a number:
------------------------------------------------"""
+{"-"*47}"""
 )
 
 guesses = 0
-secret = str(to_guess())
+secret = to_guess()
 print(secret)
 while not correct:
     bulls = 0
     cows = 0
-    guess = input(">>>")
+    guess = input(">>> ")
     if verify(guess):
         guesses += 1
-        if guess == str(secret):
+        if guess == secret:
             correct = True
         else:
             for i in range(len(guess)):
@@ -95,5 +97,6 @@ while not correct:
                 elif guess[i] in secret:
                     cows += 1
             print(f"{bulls} {bull(bulls)}, {cows} {cow(cows)}")
+    print("-"*47)
 else:
     announce_win(guesses)
