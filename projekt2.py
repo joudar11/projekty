@@ -71,19 +71,15 @@ def cow(n):
     else:
         return "cow"
 
-#hra
+#uvitani
 print(
-    f"""Hi there!
-{"-"*47}
-I've generated a random 4 digit number for you.
-Let's play a bulls and cows game.
-{"-"*47}
-Enter a number:
-{"-"*47}"""
+    "Hi there!", "-"*47, "I've generated a random 4 digit number for you.", "Let's play a bulls and cows game.", "-"*47, "Enter a number:", "-"*47, sep="\n"
 )
 
+#hra
 guesses = 0
 secret = to_guess()
+
 print(secret)
 while not correct:
     bulls = 0
