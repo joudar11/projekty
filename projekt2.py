@@ -79,7 +79,6 @@ print(
 #hra
 guesses = 0
 secret = to_guess()
-
 while not correct:
     bulls = 0
     cows = 0
