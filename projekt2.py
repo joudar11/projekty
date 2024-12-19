@@ -11,7 +11,7 @@ correct = False
 
 #str - vraci nahodne ctyrmistne cislo k hadani hracem, ktere je unikatni a nezacina nulou
 def to_guess():
-    numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    numbers = list(range(0, 10))
     increments = [1000, 100, 10, 1]
     number = 0
 
