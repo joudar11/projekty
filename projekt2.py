@@ -94,6 +94,8 @@ while not correct:
                 elif guess[i] in secret:
                     cows += 1
             print(f"{bull(bulls)}, {cow(cows)}")
+    if guesses == 10:
+        print("By the way, the average ammount of\nguesses needed is 7-8.\nYou are on your 10th guess. ;)")
     print("-"*47)
 else:
     announce_win(guesses)
