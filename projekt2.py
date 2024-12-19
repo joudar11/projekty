@@ -55,13 +55,13 @@ def announce_win(final_guesses):
 That's amazing!""")
 
 def bull(n):
-    if n > 1:
+    if n > 1 or n == 0:
         return "bulls"
     else:
         return "bull"
 
 def cow(n):
-    if n > 1:
+    if n > 1 or n == 0:
         return "cows"
     else:
         return "cow"
