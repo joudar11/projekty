@@ -7,6 +7,8 @@ email: krystofklika@pm.me
 import math
 import random
 
+correct = False
+guesses = 0
 
 #int - vraci nahodne cislo k hadani hracem
 def to_guess():
@@ -25,22 +27,77 @@ def to_guess():
 
 #bool - overi hracem zadane cislo - (delsi nebo kratsi nez 4, unikatni, zacatek 0, neciselne znaky). True, pokud je vstup v poradku, False, pokud neni
 def verify(user_input):
+    #kontrola zda je cislo
     if not user_input.isdigit():
         print("Input is not a valid number!")
         return False
+    
+    #kontrola delky
     if len(user_input) != 4:
         print("Input must be 4 digits!")
         return False
+    
+    #kontrola zacatku nulou
     if user_input.startswith("0"):
         print("Input must not start with 0!")
         return False
     
+    #kontrola unikatnosti
     set_verify = set()
     for number in range(len(user_input)):
         set_verify.add(user_input[number])
-
     if len(set_verify) != 4:
         print("Each digit can only be present once")
         return False
-
+    
+    #pozitivni return, pokud je vse ok
     return True
+
+def announce_win():
+    print(f"""Correct, you've guessed the right number in {guesses} guesses!
+-----------------------------------------------
+That's amazing!""")
+
+def bull(n):
+    if n > 1:
+        return "bulls"
+    else:
+        return "bull"
+
+def cow(n):
+    if n > 1:
+        return "cows"
+    else:
+        return "cow"
+#hra
+
+print(
+    """Hi there!
+-----------------------------------------------
+I've generated a random 4 digit number for you.
+Let's play a bulls and cows game.
+-----------------------------------------------
+Enter a number:
+-----------------------------------------------"""
+)
+
+secret = str(to_guess())
+print(secret)
+while not correct:
+    bulls = 0
+    cows = 0
+    guess = input(">>>")
+    if verify(guess):
+        guesses += 1
+        if guess == str(secret):
+            correct = True
+        else:
+            for i in range(len(guess)):
+                if guess[i] in secret:
+                    if guess[i] == secret[i]:
+                        bulls += 1
+                    else:
+                        cows += 1
+            print(f"{bulls} {bull(bulls)}, {cows} {cow(cows)}.")
+else:
+    announce_win()
