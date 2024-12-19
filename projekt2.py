@@ -57,19 +57,19 @@ def announce_win(final_guesses):
     print(
         "Correct, you've guessed the right number", f"in {final_guesses} guess{plural}!", "-"*47, "That's amazing!", sep="\n")
 
-#vrati string bull nebo bulls na zaklade vyhodnoceni, zda jde o 1 ci vice pismen
+#vrati string bull nebo bulls na zaklade vyhodnoceni, zda jde o 1 ci vice cisel
 def bull(n):
-    if n > 1 or n == 0:
-        return "bulls"
-    else:
+    if n == 1:
         return "bull"
-
-#vrati string cow nebo cows na zaklade vyhodnoceni, zda jde o 1 ci vice pismen
-def cow(n):
-    if n > 1 or n == 0:
-        return "cows"
     else:
+        return "bulls"
+
+#vrati string cow nebo cows na zaklade vyhodnoceni, zda jde o 1 ci vice cisel
+def cow(n):
+    if n  == 1:
         return "cow"
+    else:
+        return "cows"
 
 #uvitani
 print(
