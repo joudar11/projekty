@@ -43,7 +43,7 @@ def verify(user_input):
     
     #kontrola unikatnosti
     if len(set(user_input)) != 4:
-        print("Each digit can only be present once")
+        print("Each digit must only be present once!")
         return False
     
     #pozitivni return, pokud je vse ok
