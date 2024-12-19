@@ -80,7 +80,6 @@ print(
 guesses = 0
 secret = to_guess()
 
-print(secret)
 while not correct:
     bulls = 0
     cows = 0
