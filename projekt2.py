@@ -22,7 +22,7 @@ def to_guess():
             rand = random.randint(0, len(numbers)-1)
         number = number + (increments[_] * numbers[rand])
         numbers.pop(rand)
-    return(number)
+    return number
 
 #bool - overi hracem zadane cislo - (delsi nebo kratsi nez 4, unikatni, zacatek 0, neciselne znaky). True, pokud je vstup v poradku, False, pokud neni
 def verify(user_input):
